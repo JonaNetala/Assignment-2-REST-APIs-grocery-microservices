@@ -15,7 +15,7 @@ def get_cart(user_id):
 # Add a product to the cart
 @app.route('/cart/<int:user_id>/add/<int:product_id>', methods=['POST'])
 def add_to_cart(user_id, product_id):
-    product_service_url = 'https://product-service-tp9u.onrender.com'  # Changed Product Service URL
+    product_service_url = 'https://product-service-tp9u.onrender.com/products/' # Changed Product Service URL
     product_response = requests.get(f'{product_service_url}{product_id}')
     
     if product_response.status_code == 200:
